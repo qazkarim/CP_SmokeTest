@@ -21,11 +21,17 @@ steps:
 - script: npx cypress verify
   displayName: 'Check Cypress Installation'
 
-- script: npx cypress run
-  displayName: 'Run Cypress Tests'
+- script: npx cypress run --browser chrome
+  displayName: 'Run Cypress Tests in Chrome'
 
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: 'cypress/screenshots'
+    artifact: 'cypress-screenshots'
+    publishLocation: 'pipeline'
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: 'cypress/reports'
     artifact: 'mochawesome-reports'
     publishLocation: 'pipeline'
+  condition: succeededOrFailed()
