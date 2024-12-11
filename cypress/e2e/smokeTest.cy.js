@@ -269,7 +269,7 @@ describe('Smoke Tests', () => {
         cy.wait(3000)
     })
     
-    it.skip('Verify user is able to create and submit an application from Portal', () => {
+    it('Verify user is able to create and submit an application from Portal', () => {
         cy.visit('https://customer-portal-qa.aws.sunwebportal.com/apply/demo')
         cy.get('#propertyCode').clear().type('pnr')
         cy.get('#siteNumber').clear().type('629')  
@@ -280,7 +280,7 @@ describe('Smoke Tests', () => {
         cy.get('button').contains('Sign In').click()
         cy.wait(2000)
         cy.get('button').contains('Log in').should('be.disabled')
-        cy.get('#username').clear().type('adam.gil2050@yahoo.com')
+        cy.get('#username').clear().type('zksust@gmail.com')
         cy.get('#password').clear().type('Password#123')
         cy.get('button').contains('Log in').should('be.enabled').click()
         cy.wait(7000)
