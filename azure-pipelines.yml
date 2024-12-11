@@ -4,7 +4,15 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+- none
+
+schedules:
+  - cron: "0 0 * * *"
+    displayName: Daily Portal Smoke Test
+    branches:
+      include:
+        - master
+    always: true
 
 pool:
   vmImage: ubuntu-latest
