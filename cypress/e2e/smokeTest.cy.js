@@ -218,7 +218,7 @@ describe('Smoke Tests', () => {
     })
 
 
-    it.skip('Verify user is able to make payment', () => {
+    it('Verify Rent Payment widget is loading in Portal', () => {
         cy.visit('https://customer-portal-qa.aws.sunwebportal.com/auth/login')
         //cy.wait(2000)
         //cy.get('button').contains('Log in').should('be.disabled')
@@ -233,20 +233,18 @@ describe('Smoke Tests', () => {
         cy.wait(2000)
         cy.get('button').contains('Next').should('be.enabled').click()
         cy.wait(10000)
+        cy.get('button').contains('Continue').should('be.visible')
+        
+        /*
         cy.get('#credit-card-radio').check()
-
-        // handle iframe
-        //cy.frameLoaded('iframe')
-        //cy.iframe('iframe').find('#card-number').type('6011111111111117')
-
-
+        //handle iframe
+        cy.frameLoaded('iframe')
+        cy.iframe('iframe').find('#card-number').type('6011111111111117')
         cy.get('#card-name-on-account').type('Adam Gill')
         cy.get('#exp-date').type('2027-12')
         cy.get('#card-cvv').type('123')
         cy.get('#state').select('Michigan')
-
-        cy.get('#continue').click()
-
+        */
         
     })
 
@@ -280,7 +278,7 @@ describe('Smoke Tests', () => {
         cy.get('button').contains('Sign In').click()
         cy.wait(2000)
         cy.get('button').contains('Log in').should('be.disabled')
-        cy.get('#username').clear().type('zksust@gmail.com')
+        cy.get('#username').clear().type('andrew.saimonds2024@yahoo.com')
         cy.get('#password').clear().type('Password#123')
         cy.get('button').contains('Log in').should('be.enabled').click()
         cy.wait(7000)
