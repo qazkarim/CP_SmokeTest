@@ -34,12 +34,7 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: 'cypress/screenshots'
-    artifact: 'cypress-screenshots'
-    publishLocation: 'pipeline'
-- task: PublishPipelineArtifact@1
-  inputs:
     targetPath: 'cypress/reports'
-    artifact: 'mochawesome-reports'
+    artifact: 'TestReport'
     publishLocation: 'pipeline'
   condition: succeededOrFailed()
