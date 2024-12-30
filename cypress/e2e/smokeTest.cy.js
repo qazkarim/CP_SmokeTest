@@ -6,7 +6,7 @@ import 'cypress-iframe'
 describe('Smoke Tests', () => {
 
 
-    it.only('Verify user is able to login to Portal with valid username & password', () => {
+    it('Verify user is able to login to Portal with valid username & password', () => {
         cy.visit('https://customer-portal-qa.aws.sunwebportal.com/auth/login')
 
         cy.wait(2000)
@@ -267,10 +267,10 @@ describe('Smoke Tests', () => {
         cy.wait(3000)
     })
     
-    it.skip('Verify user is able to create and submit an application from Portal', () => {
+    it('Verify user is able to create and submit an application from Portal', () => {
         cy.visit('https://customer-portal-qa.aws.sunwebportal.com/apply/demo')
         cy.get('#propertyCode').clear().type('pnr')
-        cy.get('#siteNumber').clear().type('629')  
+        cy.get('#siteNumber').clear().type('630')  
         cy.get('#applicationType').select('Purchase: SH-Cash')
         cy.get('a[href]').click()
         cy.wait(4000)
