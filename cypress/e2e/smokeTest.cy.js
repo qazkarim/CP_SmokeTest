@@ -6,7 +6,7 @@ import 'cypress-iframe'
 describe('Smoke Tests', () => {
 
 
-    it('Verify user is able to login to Portal with valid username & password', () => {
+    it.only('Verify user is able to login to Portal with valid username & password', () => {
         cy.visit('https://customer-portal-qa.aws.sunwebportal.com/auth/login')
 
         cy.wait(2000)
