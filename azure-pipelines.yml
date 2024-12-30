@@ -29,12 +29,17 @@ steps:
 - script: npx cypress verify
   displayName: 'Check Cypress Installation'
 
-- script: npx cypress run --browser chrome
-  displayName: 'Run Cypress Tests in Chrome'
+- script: npx cypress run 
+  displayName: 'Run Cypress Tests'
 
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: 'cypress/reports'
-    artifact: 'TestReport'
+    artifact: 'MochawesomeReport'
     publishLocation: 'pipeline'
   condition: succeededOrFailed()
+  
+- script: |
+    npx mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/mochawesome/merged-report.json
+    npx mochawesome-report-generator cypress/reports/mochawesome/merged-report.json
+  displayName: 'Generate final HTML report'
