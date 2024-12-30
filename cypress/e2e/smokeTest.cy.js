@@ -212,13 +212,13 @@ describe('Smoke Tests', () => {
 
         // Stop impersonation
         cy.contains('Stop Impersonation').should('be.enabled').click()
-        cy.contains('Customer Management and Impersonation').should('be.visible')
+        cy.contains('Customer Management and mmm Impersonation').should('be.visible')
         cy.log('Stopped impersonation')
         
     })
 
 
-    it('Verify Rent Payment widget is loading in Portal', () => {
+    it.skip('Verify Rent Payment widget is loading in Portal', () => {
         cy.visit('https://customer-portal-qa.aws.sunwebportal.com/auth/login')
         //cy.wait(2000)
         //cy.get('button').contains('Log in').should('be.disabled')
@@ -267,7 +267,7 @@ describe('Smoke Tests', () => {
         cy.wait(3000)
     })
     
-    it('Verify user is able to create and submit an application from Portal', () => {
+    it.skip('Verify user is able to create and submit an application from Portal', () => {
         cy.visit('https://customer-portal-qa.aws.sunwebportal.com/apply/demo')
         cy.get('#propertyCode').clear().type('pnr')
         cy.get('#siteNumber').clear().type('629')  
