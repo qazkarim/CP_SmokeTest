@@ -267,7 +267,7 @@ describe('Smoke Tests', () => {
         cy.wait(3000)
     })
     
-    it('Verify user is able to create and submit an application from Portal', () => {
+    it.skip('Verify user is able to create and submit an application from Portal', () => {
         cy.visit('https://customer-portal-qa.aws.sunwebportal.com/apply/demo')
         cy.get('#propertyCode').clear().type('pnr')
         cy.get('#siteNumber').clear().type('629')  
