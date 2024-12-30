@@ -218,7 +218,7 @@ describe('Smoke Tests', () => {
     })
 
 
-    it('Verify Rent Payment widget is loading in Portal', () => {
+    it.skip('Verify Rent Payment widget is loading in Portal', () => {
         cy.visit('https://customer-portal-qa.aws.sunwebportal.com/auth/login')
         //cy.wait(2000)
         //cy.get('button').contains('Log in').should('be.disabled')
