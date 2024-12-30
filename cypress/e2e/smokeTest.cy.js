@@ -212,7 +212,7 @@ describe('Smoke Tests', () => {
 
         // Stop impersonation
         cy.contains('Stop Impersonation').should('be.enabled').click()
-        cy.contains('Customer Management and mmm Impersonation').should('be.visible')
+        cy.contains('Customer Management and Impersonation').should('be.visible')
         cy.log('Stopped impersonation')
         
     })

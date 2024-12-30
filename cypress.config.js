@@ -11,7 +11,6 @@ module.exports = defineConfig({
   screenshotsFolder: "cypress/screenshots",
   e2e: {
     defaultCommandTimeout: 30000,
-
     responseTimeout: 30000,
 
     viewportWidth: 1920,
