@@ -38,8 +38,3 @@ steps:
     artifact: 'MochawesomeReport'
     publishLocation: 'pipeline'
   condition: succeededOrFailed()
-  
-- script: |
-    npx mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/mochawesome/merged-report.json
-    npx mochawesome-report-generator cypress/reports/mochawesome/merged-report.json
-  displayName: 'Generate final HTML report'
