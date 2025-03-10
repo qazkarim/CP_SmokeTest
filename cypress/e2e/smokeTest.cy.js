@@ -63,7 +63,7 @@ describe('Smoke Tests', () => {
 
         cy.wait(2000)
         cy.get('button').contains('Log in').should('be.disabled')
-        cy.get('#username').clear().type('adam.gil2050@yahoo.com')
+        cy.get('#username').clear().type('andrew.saimonds2024@yahoo.com')
         cy.get('#password').clear().type('Password#123')
         cy.get('button').contains('Log in').should('be.enabled').click()
         cy.wait(7000)
@@ -138,9 +138,9 @@ describe('Smoke Tests', () => {
         cy.contains('Start Impersonation ').click()  
         cy.wait(3000)
 
-        cy.get('h1').contains('Welcome').should('be.visible')
-        //cy.get('button').contains('Pay Now').should('be.enabled')
-
+        cy.get('.label-container').contains('Dashboard').should('be.visible').click()
+        cy.wait(3000)
+        
         // View the invoices
         cy.get('a').contains('View Balance').click()
         cy.wait(3000)
@@ -186,8 +186,8 @@ describe('Smoke Tests', () => {
         cy.contains('Start Impersonation ').click()  
         cy.wait(3000)
 
-        cy.get('h1').contains('Welcome').should('be.visible')
-        //cy.get('button').contains('Pay Now').should('be.disabled')
+        cy.get('.label-container').contains('Dashboard').should('be.visible').click()
+        cy.wait(3000)
 
         // View the invoices
         cy.get('a').contains('View Balance').click()
@@ -248,12 +248,14 @@ describe('Smoke Tests', () => {
         cy.visit('https://customer-portal-qa.aws.sunwebportal.com/auth/login')
         cy.wait(2000)
         cy.get('button').contains('Log in').should('be.disabled')
-        cy.get('#username').clear().type('adam.gil2050@yahoo.com')
+        cy.get('#username').clear().type('andrew.saimonds2024@yahoo.com')
         cy.get('#password').clear().type('Password#123')
         cy.get('button').contains('Log in').should('be.enabled').click()
         cy.wait(7000)
 
-        //cy.get('button').contains('Pay Now').should('be.enabled')
+        cy.get('.label-container').contains('Dashboard').should('be.visible').click()
+        cy.wait(3000)
+        
         //cy.wait(2000)
         cy.get('a').contains('View Balance').should('be.visible').click()
         cy.wait(5000)
