@@ -249,6 +249,7 @@ describe('Smoke Tests', () => {
         cy.wait(2000)
         cy.get('button').contains('Log in').should('be.disabled')
         cy.get('#username').clear().type('andrew.saimonds2024@yahoo.com')
+        cy.get('#username').clear().type('andrew.saimonds2024@yahoo.com')
         cy.get('#password').clear().type('Password#123')
         cy.get('button').contains('Log in').should('be.enabled').click()
         cy.wait(7000)
@@ -268,6 +269,7 @@ describe('Smoke Tests', () => {
     it.skip('Verify user is able to create and submit an application from Portal', () => {
         cy.visit('https://customer-portal-qa.aws.sunwebportal.com/apply/demo')
         cy.get('#propertyCode').clear().type('pnr')
+        cy.get('#siteNumber').clear().type('630')  
         cy.get('#siteNumber').clear().type('630')  
         cy.get('#applicationType').select('Purchase: SH-Cash')
         cy.get('a[href]').click()
