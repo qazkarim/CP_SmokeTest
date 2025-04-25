@@ -12,7 +12,7 @@ schedules:
     branches:
       include:
         - master
-    always: true
+    always: false
 
 pool:
   vmImage: ubuntu-latest
